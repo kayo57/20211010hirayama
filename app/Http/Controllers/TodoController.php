@@ -9,12 +9,8 @@ class TodoController extends Controller
 {
        public function index()
     {
-         $items = Todo::all();
-        return view('index', ['items' => $items]);
+        $items = Todo::all();
+        return view('index',);
     }
 }
-
-public function create()
-{
-    return view('create', )
-}
+ 

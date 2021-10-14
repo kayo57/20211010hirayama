@@ -8,10 +8,11 @@
 </head>
 
 <body>
+    
   <h1>Todo List</h1>
   <form action="todo/create" method="POST">
     @csrf
-    <input type="text" name="content" >
+    <input type="text" name="task_name" >
     <input type="submit" value="追加">
 
     <table>
@@ -23,8 +24,13 @@
         </tr>
 
         
-        <th>作成日</th>
-        <th>タスク名</th>
+        <th>
+        </th>
+
+        <th>
+        <input type="text" name="content" >
+        </th>
+
         <th>
                 <form action="todo/update" method="POST">
     @csrf
@@ -38,6 +44,7 @@
         <input type="hidden" name="del" value="">
         <input type="submit" value="削除">
             </th>
+            
     </table>
   </form>
 </body>
