@@ -7,5 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Todo extends Model
 {
-    protected $guarded = ['id'];
+    protected $fillable = ['id', 'content', 'created_at', 'updated_at'];
+    public static $rules = array(
+        'id' => 'required',
+        'content' => 'required',
+        'created_at' => 'required',
+        'updated_at' => 'required'
+    );
+    public function getDetail()
+    {
+        $txt = 'ID:'.$this->id . ' ' . $this->content . '' . $this->created_at . '' . $this->updated_at;
+        return $txt;
+    }
 }

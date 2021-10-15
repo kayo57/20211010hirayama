@@ -8,45 +8,47 @@
 </head>
 
 <body>
-    
+  <style>
+  </style>
+
   <h1>Todo List</h1>
-  <form action="todo/create" method="POST">
-    @csrf
-    <input type="text" name="task_name" >
+  <form action="/todo/create" method="POST">@csrf <input type="text" name="content">
     <input type="submit" value="追加">
 
-    <table>
-        <tr>
-            <th>作成日</th>
-            <th>タスク名</th>
-            <th>更新</th>
-            <th>削除</th>
-        </tr>
 
-        
-        <th>
-        </th>
-
-        <th>
-        <input type="text" name="content" >
-        </th>
-
-        <th>
-                <form action="todo/update" method="POST">
-    @csrf
-                <input type="hidden" name="txt" value="">
-        <input type="submit" value="更新">
-            </th>
-
-            <th>
-                <form action="todo/delete" method="POST">
-    @csrf
-        <input type="hidden" name="del" value="">
-        <input type="submit" value="削除">
-            </th>
-            
-    </table>
   </form>
+  <div>
+    <h3>作成日</h3>
+    <p>作成び </p>
+  </div>
+
+
+  <div>
+    <h3>タスク名</h3>
+    <input type="text" name="content">
+    </form>
+  </div>
+
+
+  <div>
+    <h3>更新</h3>
+    <form action="/todo/update" method="POST">
+      @csrf
+      <input type="hidden" name="txt" value="">
+      <input type="submit" value="更新">
+    </form>
+  </div>
+
+
+  <div>
+    <h3>削除</h3>
+    <form action="/todo/delete" method="POST">
+      @csrf
+      <input type="hidden" name="del" value="">
+      <input type="submit" value="削除"></from>
+  </div>
+
+
 </body>
 
 </html>
