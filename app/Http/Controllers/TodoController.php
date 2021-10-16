@@ -10,11 +10,17 @@ class TodoController extends Controller
        public function index()
     {
         $items = Todo::all();
-        return view('index',['items' => $items]);
+        return view('index');
     }
-    public function create()
+    
+    
+        
+    public function create(Request $request)
     {
-        return view('create', ['input' => '']);
+        $this->validate($request, Todo::$rules);
+        $from = $request->all();
+        Todo::create($from);
+        return $redirect('/todo/create');
     }
 }
  

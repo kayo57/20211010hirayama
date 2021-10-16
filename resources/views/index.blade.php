@@ -10,45 +10,64 @@
 <body>
   <style>
   </style>
+  <div class="conateiner">
 
-  <h1>Todo List</h1>
-  <form action="/todo/create" method="POST">@csrf <input type="text" name="content">
-    <input type="submit" value="追加">
+    <div class="card">
+      <p class="title">Todo List</p>
+
+      <div class="todo">
+        <form action="/todo/create" method="POST" class="flex between mb-30">
+          <input type="hidden" name="_token" value="">
+          @csrf
+          <input type="txet" class="input-add" name="content">
 
 
-  </form>
-  <div>
-    <h3>作成日</h3>
-    <p>作成び </p>
+          <input class="button-add" type="submit" value="追加">
+        </form>
+
+
+        <table>
+          <tbody>
+            <tr>
+              <th>作成日</th>
+              <th>タスク名</th>
+              <th>更新</th>
+              <th>削除</th>
+            </tr>
+
+            <tr>
+              <td></td>
+              <form action="/todo/update" method="post">
+              </form>
+              <input type="hidden" name="" value="">
+
+              <td>
+                <input type="text" class="input-update" value="" name="content">
+              </td>
+
+              <td>
+                <button class="button-update">更新</button>
+              </td>
+
+
+              <td>
+                <form action="/todo/delete" method="POST">
+                  @csrf
+                  <input type="hidden" name="del" value="">
+                  <button class="buton-delete">削除</button>
+                  </from>
+
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+      </div>
+    </div>
   </div>
-
-
-  <div>
-    <h3>タスク名</h3>
-    <input type="text" name="content">
-    </form>
-  </div>
-
-
-  <div>
-    <h3>更新</h3>
-    <form action="/todo/update" method="POST">
-      @csrf
-      <input type="hidden" name="txt" value="">
-      <input type="submit" value="更新">
-    </form>
-  </div>
-
-
-  <div>
-    <h3>削除</h3>
-    <form action="/todo/delete" method="POST">
-      @csrf
-      <input type="hidden" name="del" value="">
-      <input type="submit" value="削除"></from>
-  </div>
-
-
 </body>
 
 </html>

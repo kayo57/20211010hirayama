@@ -10,7 +10,7 @@ class Todo extends Model
     protected $fillable = ['id', 'content', 'created_at', 'updated_at'];
     public static $rules = array(
         'id' => 'required',
-        'content' => 'required',
+        'content' => 'required|max:20',
         'created_at' => 'required',
         'updated_at' => 'required'
     );
