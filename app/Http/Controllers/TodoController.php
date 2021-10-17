@@ -20,18 +20,18 @@ class TodoController extends Controller
 {
         //$this->validate($request, Todo::$rules);
         //$validate_rule= $request -> validata([
-            //$validate_rule = [
-                //'content' => 'required|max:20'
- //];
+            $validate_rule = [
+                'content' => 'required|max:20'
+ ];
         //$from = $request->all();
         //Todo::create($from);
         //$this->validate($request, $validate_rule);
 
         
-        //$this->validate($request, $validate_rule);
+        $this->validate($request, $validate_rule);
         //$this->validate($request, Todo::$rules);
-        //$form = $request->all();
-        //Todo::create($form);
+        $form = $request->all();
+        Todo::create($form);
         
         return $redirect('/');
             }

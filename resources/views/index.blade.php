@@ -17,9 +17,11 @@
 
       <div class="todo">
         <form action="/todo/create" method="POST" class="flex between mb-30">
-          <input type="hidden" name="_token" value="">
           @csrf
+          <input type="hidden" name="_token" value="">
+
           <input type="txet" class="input-add" name="content">
+
 
 
           <input class="button-add" type="submit" value="追加">
@@ -27,6 +29,7 @@
 
 
         <table>
+
           <tbody>
             <tr>
               <th>作成日</th>
@@ -38,6 +41,7 @@
             <tr>
               <td></td>
               <form action="/todo/update" method="post">
+                @csrf
               </form>
               <input type="hidden" name="" value="">
 
