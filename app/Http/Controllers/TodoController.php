@@ -34,8 +34,8 @@ class TodoController extends Controller
             $validate_rule = [
                 'content' => 'required|max:20'
  ];
-        //$from = $request->all();
-        //Todo::create($from);
+        //$form = $request->all();
+        //Todo::create($form);
         //$this->validate($request, $validate_rule);
 
         
@@ -56,16 +56,17 @@ class TodoController extends Controller
     public function update(Request $request)
     {
         
-        $from =[
-            'cotent' => $request->content,
-            'updataed_at' => $request->updataed_at
+        $form =[
+            'content' => $request->content,
+            'updated_at' => $request->updated_at
         ];
         $this->validate($request, Todo::$rules);
         $form = $request->all();
         unset($form['_token']);
-        Todo::where('id', $request->id)->update($form);
+        Todo::where('content', $request->content.'updated_at', $request->updated_at)->update($form);
+        //Todo::update($form);
         
-        //DB::update('update todos set content =:content, upadataed_at =:upadated_at', $from);
+        //DB::update('update todos set content =:content, upadataed_at =:upadated_at', $form);
         //$form = $request->all();
         //Todo::where('content', $request->content)->update($form);
         
@@ -75,6 +76,11 @@ class TodoController extends Controller
         
     }
 
-    
+    public function delete(Request $request)
+    {
+        $todo = Todo::find($request->form);
+        return view('delete', ['todo' => $todo]);
+        return redirect('/');
+    }
             
 }

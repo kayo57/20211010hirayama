@@ -15,6 +15,11 @@
     <div class="card">
       <p class="title">Todo List</p>
 
+      <ul>
+        <li>
+        </li>
+      </ul>
+
       <div class="todo">
         <form action="/todo/create" method="POST" class="flex between mb-30">
           @csrf
@@ -44,6 +49,8 @@
                 {{$todo->created_at}}
               </td>
               <form action="/todo/update" method="post">
+
+
                 @csrf
 
                 <input type="hidden" name="" value="">
@@ -60,16 +67,16 @@
 
 
 
+
+
               <td>
                 <form action="/todo/delete" method="POST">
                   @csrf
+
                   <input type="hidden" name="del" value="">
                   <button class="buton-delete">削除</button>
-                  </from>
-
-
+                </form>
               </td>
-
             </tr>
           </tbody>
           @endforeach
