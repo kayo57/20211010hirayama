@@ -5,13 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 
+
+
 class TodoController extends Controller
 
 {
        public function index()
     {
-        $items = Todo::all();
-        return view('index');
+        //$items = Todo::all();
+
+        $todos = Todo::orderBy('content', 'desc','created_at', 'desc')->get();
+
+        return view('index', ['todos' => $todos]);
+        
+        //return view('index');
     }
     
     
@@ -31,11 +38,12 @@ class TodoController extends Controller
         $this->validate($request, $validate_rule);
         //$this->validate($request, Todo::$rules);
         $form = $request->all();
+        unset($form['_token']);
+      //dd($form) ;
         Todo::create($form);
-        
-        return $redirect('/');
-            }
-    //{
-        //return $request;
-    //}
+        return redirect('/');
+    }
+
+    
+            
 }

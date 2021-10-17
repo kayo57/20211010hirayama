@@ -18,7 +18,7 @@
       <div class="todo">
         <form action="/todo/create" method="POST" class="flex between mb-30">
           @csrf
-          <input type="hidden" name="_token" value="">
+
 
           <input type="txet" class="input-add" name="content">
 
@@ -37,6 +37,7 @@
               <th>更新</th>
               <th>削除</th>
             </tr>
+            @foreach($todos as $todo)
 
             <tr>
               <td></td>
@@ -63,9 +64,12 @@
 
 
               </td>
+
             </tr>
           </tbody>
+          @endforeach
         </table>
+
 
 
 
