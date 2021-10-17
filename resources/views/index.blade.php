@@ -45,16 +45,17 @@
               </td>
               <form action="/todo/update" method="post">
                 @csrf
+
+                <input type="hidden" name="" value="">
+
+                <td>
+                  <input type="txt" class="input-update" value="{{$todo->content}}" name="content">
+                </td>
+
+                <td>
+                  <button class="button-update">更新</button>
+                </td>
               </form>
-              <input type="hidden" name="" value="">
-
-              <td>
-                <input type="txt" class="input-update" value="{{$todo->content}}" name="content">
-              </td>
-
-              <td>
-                <button class="button-update">更新</button>
-              </td>
 
 
 
