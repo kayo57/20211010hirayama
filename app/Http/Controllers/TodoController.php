@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -14,8 +15,11 @@ class TodoController extends Controller
     {
         //$items = Todo::all();
 
-        $todos = Todo::orderBy('content', 'desc','created_at', 'desc')->get();
+        //$todos = Todo::orderBy('content', 'desc','created_at', 'desc')->get();
 
+        //return view('index', ['todos' => $todos]);
+
+        $todos = DB::select('select * from todos');
         return view('index', ['todos' => $todos]);
         
         //return view('index');
@@ -41,6 +45,26 @@ class TodoController extends Controller
         unset($form['_token']);
       //dd($form) ;
         Todo::create($form);
+
+        //DB::insert('insert into todo (id, content, created_at, updated_at) values (:id, :content, :created_at, :updated_at)', $param);
+        return redirect('/');
+    }
+
+
+    
+    
+    public function update(Request $request)
+    {
+        $from =[
+            'cotent' => $request->content,
+            'updataed_at' => $repuest->updataed_at
+        ];
+        DB::update('update todos set content =:content, upadataed_at =:upadated_at', $from);
+        $form = $request->all();
+        Todo::where('content', $request->content)->update($form);
+        
+        
+        
         return redirect('/');
     }
 

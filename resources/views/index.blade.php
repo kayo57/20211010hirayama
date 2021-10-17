@@ -40,19 +40,23 @@
             @foreach($todos as $todo)
 
             <tr>
-              <td></td>
+              <td>
+                {{$todo->created_at}}
+              </td>
               <form action="/todo/update" method="post">
                 @csrf
               </form>
               <input type="hidden" name="" value="">
 
               <td>
-                <input type="text" class="input-update" value="" name="content">
+                <input type="txt" class="input-update" value="{{$todo->content}}" name="content">
               </td>
 
               <td>
                 <button class="button-update">更新</button>
               </td>
+
+
 
 
               <td>
