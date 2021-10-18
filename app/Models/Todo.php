@@ -12,8 +12,6 @@ class Todo extends Model
     public static $rules = array(
         'id' => 'required',
         'content' => 'required|max:20',
-        'created_at' => 'required',
-        'updated_at' => 'required'
     );
     public function getDetail()
     {

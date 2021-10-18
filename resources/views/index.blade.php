@@ -64,11 +64,13 @@
               </form>
 
 
+
               <td>
-                <form action="/todo/delete" method="POST">
+                <form action="/todo/delete" method="post">
                   @csrf
 
-                  <input type="hidden" name="del" value="">
+                  <input type="hidden" name="id" value="{{$todo->id}}">
+
                   <button class="buton-delete">削除</button>
                 </form>
               </td>
