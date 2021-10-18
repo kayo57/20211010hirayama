@@ -56,14 +56,11 @@ class TodoController extends Controller
     public function update(Request $request)
     {
         
-        $form =[
-            'content' => $request->content,
-            'updated_at' => $request->updated_at
-        ];
+        
         $this->validate($request, Todo::$rules);
         $form = $request->all();
         unset($form['_token']);
-        Todo::where('content', $request->content.'updated_at', $request->updated_at)->update($form);
+        Todo::where('id', $request->id)->update($form);
         //Todo::update($form);
         
         //DB::update('update todos set content =:content, upadataed_at =:upadated_at', $form);
@@ -71,7 +68,7 @@ class TodoController extends Controller
         //Todo::where('content', $request->content)->update($form);
         
         
-        dd($request);
+        
         return redirect('/');
         
     }

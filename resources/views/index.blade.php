@@ -48,12 +48,11 @@
               <td>
                 {{$todo->created_at}}
               </td>
+
               <form action="/todo/update" method="post">
-
-
                 @csrf
 
-                <input type="hidden" name="" value="">
+                <input type="hidden" name="id" value="{{$todo->id}}">
 
                 <td>
                   <input type="txt" class="input-update" value="{{$todo->content}}" name="content">
@@ -63,10 +62,6 @@
                   <button class="button-update">更新</button>
                 </td>
               </form>
-
-
-
-
 
 
               <td>
