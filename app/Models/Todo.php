@@ -12,7 +12,7 @@ class Todo extends Model
     public static $rules = array(
         'id' => 'required',
         'content' => 'required|max:20',
-        'content' => 'required|max:0'
+        
     );
     public function getDetail()
     {
