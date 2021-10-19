@@ -9,11 +9,10 @@
 
 
   <style>
-  .container {
-    backgroud-color: #2d197;
+  .conateiner {
+    backgroud-color: #2d197c;
   }
   </style>
-
 
 </head>
 
