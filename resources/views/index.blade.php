@@ -9,146 +9,146 @@
 
 
   <style>
-  body {
-    line-height: 1;
-  }
+    body {
+      line-height: 1;
+    }
 
-  del {
-    text-decoration: line-through;
-  }
+    del {
+      text-decoration: line-through;
+    }
 
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
 
-  .flex {
-    display: flex;
-  }
+    .flex {
+      display: flex;
+    }
 
-  .between {
-    justify-content: space-between;
-  }
+    .between {
+      justify-content: space-between;
+    }
 
-  .mb-15 {
-    margin-bottom: 15px;
-  }
+    .mb-15 {
+      margin-bottom: 15px;
+    }
 
-  .mb-30 {
-    margin-bottom: 30px;
-  }
+    .mb-30 {
+      margin-bottom: 30px;
+    }
 
-  .box {
-    background: #00008B;
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-  }
+    .box {
+      background: #FFB6C1;
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+    }
 
-  .card {
-    background-color: #fff;
-    width: 50vw;
-    padding: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-  }
+    .card {
+      background-color: #FFFAFA;
+      width: 50vw;
+      padding: 30px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 10px;
+    }
 
-  .title {
-    font-weight: bold;
-    font-size: 24px;
-  }
+    .title {
+      font-weight: bold;
+      font-size: 24px;
+    }
 
-  .input-add {
-    width: 80%;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    appearance: none;
-    font-size: 14px;
-    outline: none;
-  }
+    .input-add {
+      width: 80%;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      appearance: none;
+      font-size: 14px;
+      outline: none;
+    }
 
-  table {
-    text-align: center;
-    width: 100%
-  }
+    table {
+      text-align: center;
+      width: 100%
+    }
 
-  tr {
-    height: 50px;
-  }
+    tr {
+      height: 50px;
+    }
 
-  .input-update {
-    width: 90%;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    appearance: none;
-    font-size: 14px;
-    outline: none;
-  }
+    .input-update {
+      width: 90%;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      appearance: none;
+      font-size: 14px;
+      outline: none;
+    }
 
-  .button-add {
-    text-align: left;
-    border: 2px solid #dc70fa;
-    font-size: 12px;
-    color: #dc70fa;
-    background-color: #fff;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.4s;
-    outline: none;
-  }
+    .button-add {
+      text-align: left;
+      border: 2px solid #dc70fa;
+      font-size: 12px;
+      color: #dc70fa;
+      background-color: #fff;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.4s;
+      outline: none;
+    }
 
-  .button-add:hover {
-    background-color: #dc70fa;
-    border-color: #dc70fa;
-    color: #fff;
-  }
+    .button-add:hover {
+      background-color: #dc70fa;
+      border-color: #dc70fa;
+      color: #fff;
+    }
 
-  .button-update {
-    text-align: left;
-    border: 2px solid #fa9770;
-    font-size: 12px;
-    color: #fa9770;
-    background-color: #fff;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.4s;
-    outline: none;
-  }
+    .button-update {
+      text-align: left;
+      border: 2px solid #fa9770;
+      font-size: 12px;
+      color: #fa9770;
+      background-color: #fff;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.4s;
+      outline: none;
+    }
 
-  .button-update:hover {
-    background-color: #fa9770;
-    border-color: #fa9770;
-    color: #fff;
-  }
+    .button-update:hover {
+      background-color: #fa9770;
+      border-color: #fa9770;
+      color: #fff;
+    }
 
-  .button-delete {
-    text-align: left;
-    border: 2px solid #71fadc;
-    font-size: 12px;
-    color: #71fadc;
-    background-color: #fff;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.4s;
-    outline: none;
-  }
+    .button-delete {
+      text-align: left;
+      border: 2px solid #71fadc;
+      font-size: 12px;
+      color: #71fadc;
+      background-color: #fff;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.4s;
+      outline: none;
+    }
 
-  .button-delete:hover {
-    background-color: #71fadc;
-    border-color: #71fadc;
-    color: #fff;
-  }
+    .button-delete:hover {
+      background-color: #71fadc;
+      border-color: #71fadc;
+      color: #fff;
+    }
   </style>
 
 
@@ -229,8 +229,11 @@
 
 
       </div>
+      <!-------end.todo--------->
     </div>
+    <!--------end.card------->
   </div>
+  <!-------end.box--------->
 </body>
 
 </html>
